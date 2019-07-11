@@ -19,6 +19,7 @@ fn bubble_sort<T: PartialOrd>(mut collection :Vec<T>) -> Vec<T> {
 #[test]
 fn sort_collection_of_one() {
     let collection = vec!["apple".to_string()];
+    
     let sorted_collection = bubble_sort(collection);
 
     assert!(sorted_collection == vec!["apple".to_string()]);
@@ -27,6 +28,7 @@ fn sort_collection_of_one() {
 #[test]
 fn sort_when_already_sorted() {
     let collection = vec!["apple".to_string(), "banana".to_string()];
+    
     let sorted_collection = bubble_sort(collection);
 
     assert!(sorted_collection == vec!["apple".to_string(), "banana".to_string()]);
@@ -35,6 +37,7 @@ fn sort_when_already_sorted() {
 #[test]
 fn sort_two_strings() {
     let collection = vec!["banana".to_string(), "apple".to_string()];
+    
     let sorted_collection = bubble_sort(collection);
 
     assert!(sorted_collection == vec!["apple".to_string(), "banana".to_string()]);
@@ -42,8 +45,19 @@ fn sort_two_strings() {
 
 #[test]
 fn sort_many_strings() {
-    let collection = vec!["banana".to_string(), "pineapple".to_string(), "pear".to_string(),"pinenut".to_string(),"apple".to_string()];
+    let collection = vec![
+        "banana".to_string(),
+        "pineapple".to_string(),
+        "pear".to_string(),
+        "pinenut".to_string(),
+        "apple".to_string()];
+
     let sorted_collection = bubble_sort(collection);
 
-    assert!(sorted_collection == vec!["apple".to_string(), "banana".to_string(),"pear".to_string(), "pineapple".to_string(), "pinenut".to_string()]);
+    assert!(sorted_collection == vec![
+        "apple".to_string(),
+        "banana".to_string(),
+        "pear".to_string(),
+        "pineapple".to_string(),
+        "pinenut".to_string()]);
 }
