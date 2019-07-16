@@ -61,3 +61,20 @@ fn sort_many_strings() {
         "pineapple".to_string(),
         "pinenut".to_string()]);
 }
+
+#[test]
+fn sort_with_duplicates() {
+    let collection = vec![
+        "pineapple".to_string(),
+        "pear".to_string(),
+        "apple".to_string(),
+        "pear".to_string()];
+
+    let sorted_collection = bubble_sort(collection);
+
+    assert!(sorted_collection == vec![
+        "apple".to_string(),
+        "pear".to_string(),
+        "pear".to_string(),
+        "pineapple".to_string()]);
+}
